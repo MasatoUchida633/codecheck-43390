@@ -1,0 +1,26 @@
+## Yamamu's other solutions:
+env:
+  APP_COMMAND: node solution.js
+#   APP_COMMAND: python3 solution.py
+#-------------------------------
+# # Koka's rust solution:
+# build:
+# #    - curl -sSf https://static.rust-lang.org/rustup.sh | sh
+# #    - rustup install nightly
+# #    - rustup default nightly
+#   - cargo build --manifest-path ./solution-rs/Cargo.toml
+# env:
+#   APP_COMMAND: cargo run --manifest-path ./solution-rs/Cargo.toml
+#-------------------------------
+## Yamamu's cpp solution:
+# build:
+#   - c++ -std=c++11 -o solution.o solution.cpp
+# env:
+#   APP_COMMAND: ./solution.o
+#-------------------------------
+## Scala solution:
+# build:
+#   - scalac solution.scala
+# env:
+#   APP_COMMAND: scala App
+test: mocha
