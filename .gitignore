@@ -1,9 +1,15 @@
-# installed NodeJS modules, which are often very large.
-node_modules/
-package-lock.json
-
-# avoid compiled files and managed package directories
-*.lock
-*/target/
 *.class
-*.o
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+target/
+node_modules/
