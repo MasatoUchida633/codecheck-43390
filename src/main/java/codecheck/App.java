@@ -44,6 +44,16 @@ public class App {
 		
 		// 動的計画法の実施
 		for (int i = 0; i <= cardNum; i++) {
+			Card card = null;
+			int cost = 0;
+			int attack = 0;
+			
+			if (i != 0) {
+				card = cardList.get(i -1);
+				cost = card.getCost();
+				attack = card.getAttack();
+			}
+			
 			for (int j = 0; j <= num; j++ ) {
 				for (int k = 0; k <= mp; k++) {
 					if (i == 0 || j == 0 || k == 0) {
@@ -51,14 +61,13 @@ public class App {
 						continue;
 					}
 					
-					int cost = cardList.get(i -1).getCost();
+					int oldAttack = dp[i- 1][j - 1][k];
 					if (k < cost) {
-						dp[i][j][k] = dp[i- 1][j - 1][k];
+						dp[i][j][k] = oldAttack;
 						continue;
 					}
 					
-					int newAttack = dp[i -1][j -1][k - cost] + cardList.get(i -1).getAttack();
-					int oldAttack = dp[i- 1][j - 1][k];
+					int newAttack = dp[i -1][j -1][k - cost] + attack;
 					if (newAttack > oldAttack) {
 						dp[i][j][k] = newAttack;
 					} else {
