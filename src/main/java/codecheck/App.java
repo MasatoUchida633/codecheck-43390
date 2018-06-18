@@ -10,11 +10,13 @@ public class App {
 //			System.out.println(output);
 //		}
 		
-		int num = Integer.parseInt(args[0]);
-		int mp = Integer.parseInt(args[1]);
+		String argList[] = args[0].split(" ");
+		
+		int num = Integer.parseInt(argList[0]);
+		int mp = Integer.parseInt(argList[1]);
 		List<Card> cardList = new ArrayList<Card>();
 		for (int i = 2; i < args.length; i = i + 2) {
-			Card card = new Card(Integer.parseInt(args[i + 1]), Integer.parseInt(args[i]));
+			Card card = new Card(Integer.parseInt(argList[i + 1]), Integer.parseInt(argList[i]));
 			cardList.add(card);
 		}
 		
